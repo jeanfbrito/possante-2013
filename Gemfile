@@ -42,3 +42,4 @@ gem "font-awesome-rails"
 gem "bootstrap-sass"
 gem "enumerize"
 gem "friendly_id"
+gem 'inherited_resources'
