@@ -40,3 +40,5 @@ gem 'spring',        group: :development
 
 gem "font-awesome-rails"
 gem "bootstrap-sass"
+gem "enumerize"
+gem "friendly_id"
