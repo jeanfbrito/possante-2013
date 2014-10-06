@@ -1,0 +1,15 @@
+.possante-login-btn{
+  margin-right: 10px;
+}
+
+.index-header{
+  background: url('../images/low_contrast_linen.png');
+  background-color: #313131;
+  border-bottom: 1px solid #313131;
+  display: block;
+  color: #E3E3E3;
+}
+
+.navbar {
+  margin-bottom: 2px;
+}

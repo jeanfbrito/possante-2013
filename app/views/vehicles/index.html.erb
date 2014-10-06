@@ -1,0 +1,126 @@
+<div class="container">
+  <div class="row">
+    <div class="col-md-12">
+      <h2 class="title-divider"><span>Meus  <span class="de-em">Veículos</span></span> <small>Estes são os veiculos que você tem cadastrado</small></h2>
+      <table class="table table-striped">
+        <thead>
+          <tr>
+            <th>Placa</th>
+            <th>Marca</th>
+            <th>Modelo</th>
+            <th>Ano</th>
+            <th>Atualizado</th>
+            <th>Km</th>
+            <th style="text-align: center;">Status</th>
+            <th style="text-align: center;">Ações</th>
+          </tr>
+        </thead>
+        <tbody>
+          <% collection.each do |vehicle|%>
+              <tr>
+                <td>
+                  <%= link_to vehicle.numberplate, vehicle_path(vehicle) %>
+                </td>
+                <td>
+                  <%= vehicle.vehicle_model %>
+                </td>
+                <td>
+                  <%= vehicle.vehicle_model %>
+                </td>
+                <td>
+                  <%= vehicle.fabrication_year %>
+                </td>
+                <td>
+                  <%= l(vehicle.updated_at, :format => :long) %>
+                </td>
+                <td>
+                  <%= vehicle.mileage %>
+                </td>
+                <td style="text-align: center; color: #01C506;">
+                  <% case vehicle.status.value
+                       when 0 %>
+                        <i  style="color: #01C506;" class="fa fa-check-circle fa-2x"></i>
+                    <% when 1 %>
+                        <i  style="color: #FF972F;" class="fa fa-exclamation-triangle fa-2x"></i>
+                    <% when 2 %>
+                        <i  style="color: #C60000;" class="fa fa-times-circle fa-2x"></i>
+                  <% end %>
+                </td>
+                <td style="text-align: center;" class="vehicle-actions">
+                  
+                  <%= link_to vehicle_refuellings_path(vehicle) do %>
+                    <i class="fa fa-tint fa-2x" data-toggle="tooltip" title="Abastecimentos"></i>
+                  <% end %>
+                  <%= link_to vehicle_refuellings_path(vehicle) do %>
+                    <i class="fa fa-calendar fa-2x" data-toggle="tooltip" title="Lembretes/Agendamentos"></i>
+                  <% end %>
+                </td>
+              </tr>
+              <% end %>
+  </tbody>
+</table>
+</div>
+
+
+<div class="col-md-7">
+  <h2 class="title-divider"><span>Legenda</span></h2>
+
+  <table class="table table-striped">
+    <thead>
+      <tr>
+        <th>Símbolo</th>
+        <th>Descrição</th>
+        <th>Símbolo</th>
+        <th>Descrição</th>
+      </tr>
+    </thead>
+    <tbody>
+      <tr>
+        <td style="text-align: center; color: #01C506;">
+          <i class="fa fa-check-circle fa fa-2x" data-original-title="" title=""></i>
+        </td>
+        <td>Está tudo ok.</td>
+
+        <td style="text-align: center;">
+          <i class="fa fa-wrench fa fa-2x" data-original-title="" title=""></i>
+        </td>
+        <td>Fazer manutenção.</td>
+      </tr>
+      <tr>
+        <td style="text-align: center; color: #FF972F;">
+          <i class="fa fa-exclamation-triangle fa fa-2x" data-original-title="" title=""></i>
+        </td>
+        <td>Atenção, há algo pendente.</td>
+
+        <td style="text-align: center;">
+          <i class="fa fa-tint fa fa-2x" data-original-title="" title=""></i>
+        </td>
+        <td>Cadastrar abastecimento.</td>
+      </tr>
+      <tr>
+        <td style="text-align: center; color: #C60000;">
+          <i class="fa fa-times-circle fa fa-2x" data-original-title="" title=""></i>
+        </td>
+        <td>Cuidado! Há alguma coisa errada!</td>
+
+        <td style="text-align: center;">
+          <i class="fa fa-calendar fa fa-2x" data-original-title="" title=""></i>
+        </td>
+        <td>Exibir lembretes.</td>
+      </tr>
+    </tbody>
+  </table>
+</div>
+
+<div class="col-md-5">
+
+  <form class="form-login form-wrapper form-narrow" action="/pacotes/pesquisar/" method="post" id="search_package">
+    <div style="display:none"><input type="hidden" name="csrfmiddlewaretoken" value="68a5cb858387cebc52a42d7e6328abc4"></div>
+    <h3 class="title-divider"><span>Pesquisar</span></h3>
+    <input autocomplete="off" name="q" maxlength="20" type="text" class="input-block-level" id="id_query">
+    <br>
+    <button class="btn btn-large btn-primary" type="submit">Pesquisar</button>
+  </form>
+</div>
+</div>
+</div>
