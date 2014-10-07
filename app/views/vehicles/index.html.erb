@@ -2,7 +2,7 @@
   <div class="row">
     <div class="col-md-12">
       <h2 class="title-divider"><span>Meus  <span class="de-em">Veículos</span></span> <small>Estes são os veiculos que você tem cadastrado</small></h2>
-      <table class="table table-striped">
+      <table id="vehicles" class="table table-striped">
         <thead>
           <tr>
             <th>Placa</th>
@@ -47,7 +47,9 @@
                   <% end %>
                 </td>
                 <td style="text-align: center;" class="vehicle-actions">
-                  
+                  <%= link_to vehicle_refuellings_path(vehicle) do %>
+                    <i class="fa fa-wrench fa-2x" data-toggle="tooltip" title="Manutenções"></i>
+                  <% end %>
                   <%= link_to vehicle_refuellings_path(vehicle) do %>
                     <i class="fa fa-tint fa-2x" data-toggle="tooltip" title="Abastecimentos"></i>
                   <% end %>
