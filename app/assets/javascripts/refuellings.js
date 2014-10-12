@@ -4,11 +4,16 @@ $(document).ready(function() {
     $(window).resize(function() {
         window.m.redraw();
     });
-
-    $(document).on('page:change', function() {
-      window.m.redraw();
-    });
 });
+
+$(document).on('page:change', function() {
+      window.m.redraw();
+  });
+
+$(document).on('page:load', function() {
+      window.m.redraw();
+  });
+
 
 function lineChart() {
     window.m = Morris.Line({
