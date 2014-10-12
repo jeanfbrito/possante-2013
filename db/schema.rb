@@ -42,6 +42,7 @@ ActiveRecord::Schema.define(version: 20141006234556) do
   end
 
   create_table "vehicles", force: true do |t|
+    t.string   "vehicle_brand"
     t.string   "vehicle_model"
     t.string   "fabrication_year"
     t.integer  "user_id"

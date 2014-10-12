@@ -6,9 +6,9 @@
 #   cities = City.create([{ name: 'Chicago' }, { name: 'Copenhagen' }])
 #   Mayor.create(name: 'Emanuel', city: cities.first)
 
-Vehicle.create( vehicle_model: 'Civic LX 16V 115cv 4p', fabrication_year: "2005", user_id: 1, mileage: 123456, numberplate: 'IMP-4233', status: :ok)
-Vehicle.create( vehicle_model: 'Corolla Xli 110cv Aut.', fabrication_year: "2004", user_id: 1, mileage: 123456, numberplate: 'IOY-9926', status: :warning)
-Vehicle.create( vehicle_model: 'XR 250 Tornado', fabrication_year: "2007", user_id: 1, mileage: 123456, numberplate: 'INU-3636', status: :danger)
+Vehicle.create( vehicle_brand: "Honda", vehicle_model: 'Civic LX 16V 115cv 4p', fabrication_year: "2005", user_id: 1, mileage: 123456, numberplate: 'IMP-4233', status: :ok)
+Vehicle.create( vehicle_brand: "Toyota", vehicle_model: 'Corolla Xli 110cv Aut.', fabrication_year: "2004", user_id: 1, mileage: 123456, numberplate: 'IOY-9926', status: :warning)
+Vehicle.create( vehicle_brand: "Honda", vehicle_model: 'XR 250 Tornado', fabrication_year: "2007", user_id: 1, mileage: 123456, numberplate: 'INU-3636', status: :danger)
 
 kmanterior = 0
 for i in 0..50

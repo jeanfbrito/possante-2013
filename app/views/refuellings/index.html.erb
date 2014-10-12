@@ -1,6 +1,6 @@
 <div class="container">
   <h2 class="title-divider"><span>Abastecimentos <span class="de-em"> do veículo</span></span> 
-    <small><%= @vehicle.vehicle_model %> - Placa: <%= @vehicle.numberplate %> </small></h2>
+    <small><%= @vehicle.vehicle_brand %> - <%= @vehicle.vehicle_model %> - Placa: <%= @vehicle.numberplate %> </small></h2>
     <div class=".col-md-12">
 <%#= line_chart @vehicle.refuellings.group_by_day(:date).average(:average_consumption),
 :library => {title: 'Consumo médio'} 
