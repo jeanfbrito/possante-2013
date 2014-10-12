@@ -30,17 +30,19 @@ function lineChart() {
 }
 
 $(document).ready(function(){
-   $('.edit-refill-button').click(function() {
+   $('.modal-refill-button').click(function() {
     var url;
     url = $(this).data('url');
+    title = $(this).data('modaltitle');
+    $('#modalRefill .modal-title').text(title);
     return $.ajax({
       url: url,
       type: "GET",
       success: function(data) {
-        return $('#editRefill .modal-body').html(data);
+        return $('#modalRefill .modal-body').html(data);
       },
       error: function() {
-        return $('#editRefill .modal-body').html("ERROR");
+        return $('#modalRefill .modal-body').html("ERROR");
       }
     });
   });   
