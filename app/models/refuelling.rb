@@ -21,12 +21,12 @@ class Refuelling < ActiveRecord::Base
     lastRefill = self.previous #carrega o ultimo abastecimento
 
     self.liters = (self.total_value / self.liter_price).round(2)
-    self.vehicle.update_attributes(:mileage => self.km)
+    self.vehicle.update_attributes(:mileage => self.mileage)
 
     unless lastRefill.nil?
-      self.km_runned = self.km - lastRefill.km #calcula os quilometros rodados desde o ultimo abastecimento
+      self.traveled_mileage = self.mileage - lastRefill.mileage #calcula os quilometros rodados desde o ultimo abastecimento
 
-      self.average_consumption = (self.km_runned / self.liters).round(2)
+      self.average_consumption = (self.traveled_mileage / self.liters).round(2)
       #binding.pry
       unless lastRefill.average_consumption.nil?
         if self.average_consumption > lastRefill.average_consumption
@@ -44,12 +44,12 @@ class Refuelling < ActiveRecord::Base
     lastRefill = Refuelling.where(vehicle: self.vehicle).last #carrega o ultimo abastecimento
 
     self.liters = (self.total_value / self.liter_price).round(2)
-    self.vehicle.update_attributes(:mileage => self.km)
+    self.vehicle.update_attributes(:mileage => self.mileage)
 
     unless lastRefill.nil?
-      self.km_runned = self.km - lastRefill.km #calcula os quilometros rodados desde o ultimo abastecimento
+      self.traveled_mileage = self.mileage - lastRefill.mileage #calcula os quilometros rodados desde o ultimo abastecimento
 
-      self.average_consumption = (self.km_runned / self.liters).round(2)
+      self.average_consumption = (self.traveled_mileage / self.liters).round(2)
       #binding.pry
       unless lastRefill.average_consumption.nil?
         if self.average_consumption > lastRefill.average_consumption

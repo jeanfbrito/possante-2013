@@ -44,3 +44,4 @@ gem "enumerize"
 gem "friendly_id"
 gem 'inherited_resources'
 gem 'simple_form'
+gem 'kaminari'
