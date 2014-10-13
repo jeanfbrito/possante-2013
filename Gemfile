@@ -43,7 +43,7 @@ gem "bootstrap-sass"
 gem "enumerize"
 gem "friendly_id"
 gem 'inherited_resources'
-gem 'simple_form'
+gem 'simple_form', '~> 3.1.0.rc1', github: 'plataformatec/simple_form', branch: 'master'
 gem 'kaminari'
 gem "rails-i18n"
 gem 'jquery-turbolinks'
