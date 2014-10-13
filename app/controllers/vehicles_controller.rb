@@ -17,6 +17,14 @@ class VehiclesController < InheritedResources::Base
     end
   end
 
+  def show
+    @vehicle = Vehicle.friendly.find(params[:id])
+
+    respond_to do |format|
+      format.html
+    end
+  end
+
 
   private
     # Using a private method to encapsulate the permissible parameters is just a good pattern

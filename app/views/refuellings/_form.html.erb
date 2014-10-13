@@ -1,4 +1,5 @@
-<%= simple_form_for [@vehicle, @refuelling], url: vehicle_refuellings_path, html: { class: 'form-inline' } do |f| %>
+<div class="col-lg-4 col-lg-offset-4">
+<%= simple_form_for [@vehicle, @refuelling], url: vehicle_refuellings_path, html: { class: 'form-horizontal' } do |f| %>
   <%= f.input :date %>
   <%= f.input :mileage %>
   <%= f.input :liter_price %>
@@ -6,3 +7,4 @@
   <%= f.input :gas_station %>
   <%= f.submit %>
 <% end %>
+<div>

@@ -47,3 +47,4 @@ gem 'simple_form', '~> 3.1.0.rc1', github: 'plataformatec/simple_form', branch: 
 gem 'kaminari'
 gem "rails-i18n"
 gem 'jquery-turbolinks'
+gem 'jquery-ui-rails', '~> 5.0.1'

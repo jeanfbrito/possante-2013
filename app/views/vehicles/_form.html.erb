@@ -1,7 +1,9 @@
-<%= simple_form_for @vehicle do |f| %>
-  <%= f.input :vehicle_brand %>
-  <%= f.input :vehicle_model %>
-  <%= f.input :fabrication_year %>
-  <%= f.input :numberplate %>
-  <%= f.submit %>
-<% end %>
+<div class="container">
+  <%= simple_form_for @vehicle do |f| %>
+    <%= f.input :vehicle_brand %>
+    <%= f.input :vehicle_model %>
+    <%= f.input :fabrication_year %>
+    <%= f.input :numberplate %>
+    <%= f.submit %>
+  <% end %>
+<div>
