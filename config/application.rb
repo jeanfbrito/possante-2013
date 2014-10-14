@@ -26,7 +26,7 @@ module Possante
 
     config.assets.compile = true
     # Precompile additional assets (application.js, application.css, and all non-JS/CSS are already added)
-    config.assets.precompile += %w( application.css application.js )
+    config.assets.precompile += %w( application.css application.js bootstrap_and_customization.css.scss )
     
   end
 end
