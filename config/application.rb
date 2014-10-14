@@ -25,7 +25,8 @@ module Possante
     config.i18n.default_locale = :"pt-BR"
 
     config.assets.compile = true
-    config.assets.precompile =  ['*.js', '*.css', '*.css.erb'] 
+    # Precompile additional assets (application.js, application.css, and all non-JS/CSS are already added)
+    config.assets.precompile += %w( application.css application.js )
     
   end
 end
