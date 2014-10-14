@@ -2,6 +2,9 @@ Rails.application.routes.draw do
 
   resources :vehicles do
     resources :refuellings
+    resources :maintenances do
+      resources :documents
+    end
   end
 
   # The priority is based upon order of creation: first created -> highest priority.

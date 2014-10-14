@@ -1,0 +1,69 @@
+<div id="content">
+    <div class="container">
+    <h2 class="title-divider"><span>Manutenções <span class="de-em"> do veículo</span></span> 
+      <small><%= @vehicle.vehicle_brand %> - <%= @vehicle.vehicle_model %> - Placa: <%= @vehicle.numberplate %> </small></h2>
+              <div id="tools">
+                <%= link_to vehicles_path do %>
+                  <i class="fa fa-chevron-circle-left fa-2x" data-toggle="tooltip" title="Veículos"></i>
+                   Veículos
+                <% end %>
+                <a href="<%= new_vehicle_maintenance_path(@vehicle)%>" class="btn btn-success pull-right spaced">
+                  <i class="fa fa-plus">
+                  </i> Nova manutenção</a>
+              </div>
+              
+              <table class="table table-striped">
+                <thead>
+                  <tr>
+                    <th></th> 
+                    <th>Data</th>                
+                    <th>Km</th>
+                    <th>Custo</th>
+                    <th>Status da Garantia</th>
+                    <th>Garantia</th>
+                    <th>Tipo de Manutenção</th>
+                    <th>Docs</th>
+                  </tr>
+                </thead>
+                <tbody>
+                  <% @maintenances.each do |maintenance| %>
+                  <tr>
+                    <td style="text-align: center;" class="refill-actions">
+                      <%= link_to edit_vehicle_maintenance_path(@vehicle, maintenance) do %>
+                        <i class="fa fa-edit"></i>
+                      <% end %>
+                      <%#= link_to raw('<i class="fa fa-edit" data-toggle="tooltip" title="Editar manutenção"></i>'), 
+                        "#editMaintenance", 
+                        :data => { :url => edit_vehicle_maintenance_path(@vehicle, maintenance), :toggle => "modal" }, 
+                        :class => "edit-maintenance-button" %>
+                    </td>
+                    <td>
+                      <%= l maintenance.date %>
+                    </td>
+                    <td>
+                      <%= maintenance.mileage %>
+                    </td>
+                    <td>
+                      <%= number_to_currency(maintenance.cost) %>
+                    </td>
+                    <td>
+                      <%= maintenance.warranty_status %>
+                    </td>
+                    <td>
+                      <%= l maintenance.warranty_time %>
+                    </td>
+                    <td>
+                      <%= maintenance.maintenance_type %>
+                    </td>
+                    <td style="text-align: center;" class="refill-actions">
+                      <%= link_to vehicle_maintenance_documents_path(@vehicle, maintenance) do %>
+                        <i class="fa fa-file-text-o" data-toggle="tooltip" title="Documentos"></i>
+                      <% end %>
+                    </td>
+                  </tr>
+                  <% end %>           
+                </tbody>
+              </table>
+              <%= paginate @maintenances, :pagination_class => "pagination-small pagination-centered" %>
+  </div>
+</div>

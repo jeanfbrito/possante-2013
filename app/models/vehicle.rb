@@ -11,5 +11,6 @@ class Vehicle < ActiveRecord::Base
   friendly_id :numberplate, use: :slugged
   
   has_many :refuellings
+  has_many :maintenances
   belongs_to :user
 end

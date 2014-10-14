@@ -1,0 +1,11 @@
+<div class="col-lg-4 col-lg-offset-4">
+  <%= simple_form_for [@vehicle, @maintenance], url: vehicle_maintenances_path, html: { class: 'form-horizontal' } do |f| %>
+    <%= f.input :date %>
+    <%= f.input :mileage %>
+    <%= f.input :cost %>
+    <%= f.input :maintenance_type %>
+    <%= f.input :warranty_time %>
+    <%= f.input :description %>
+    <%= f.submit %>
+  <% end %>
+</div>
