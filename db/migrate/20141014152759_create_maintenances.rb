@@ -9,6 +9,8 @@ class CreateMaintenances < ActiveRecord::Migration
       t.integer :vehicle_id
       t.integer :warranty_status
       t.integer :maintenance_type
+
+      t.timestamps
     end
   end
 end
