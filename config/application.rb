@@ -23,6 +23,9 @@ module Possante
     config.time_zone = 'Brasilia'
     config.i18n.available_locales = [:en, :"pt-BR"]
     config.i18n.default_locale = :"pt-BR"
+
+    config.assets.compile = true
+    config.assets.precompile =  ['*.js', '*.css', '*.css.erb'] 
     
   end
 end
