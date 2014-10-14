@@ -11,7 +11,17 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 20141014152759) do
+ActiveRecord::Schema.define(version: 20141014155101) do
+
+  create_table "documents", force: true do |t|
+    t.integer  "maintenance_id"
+    t.string   "title"
+    t.text     "description"
+    t.string   "file_uid"
+    t.string   "file_name"
+    t.datetime "created_at"
+    t.datetime "updated_at"
+  end
 
   create_table "friendly_id_slugs", force: true do |t|
     t.string   "slug",                      null: false

@@ -47,6 +47,9 @@ GEM
       coffee-script-source
       execjs
     coffee-script-source (1.8.0)
+    dragonfly (1.0.5)
+      multi_json (~> 1.0)
+      rack
     enumerize (0.8.0)
       activesupport (>= 3.2)
     erubis (2.7.0)
@@ -151,6 +154,7 @@ PLATFORMS
 DEPENDENCIES
   bootstrap-sass
   coffee-rails (~> 4.0.0)
+  dragonfly
   enumerize
   font-awesome-rails
   friendly_id

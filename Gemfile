@@ -48,3 +48,4 @@ gem 'kaminari'
 gem "rails-i18n"
 gem 'jquery-turbolinks'
 gem 'jquery-ui-rails', '~> 5.0.1'
+gem 'dragonfly'
