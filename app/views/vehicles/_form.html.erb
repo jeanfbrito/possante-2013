@@ -1,5 +1,6 @@
 <div class="container">
   <%= simple_form_for @vehicle do |f| %>
+    <%= f.hidden_field :user_id, value: current_user.id %>
     <%= f.input :vehicle_brand %>
     <%= f.input :vehicle_model %>
     <%= f.input :fabrication_year %>

@@ -1,5 +1,6 @@
 class VehiclesController < InheritedResources::Base
-  
+  before_action :authenticate_user!
+
   def new
     @vehicle = Vehicle.new
     respond_to do |format|
@@ -26,12 +27,16 @@ class VehiclesController < InheritedResources::Base
     end
   end
 
+  def index
+    @vehicles = current_user.vehicles.all
+  end
+
 
   private
     # Using a private method to encapsulate the permissible parameters is just a good pattern
     # since you'll be able to reuse the same permit list between create and update. Also, you
     # can specialize this method with per-user checking of permissible attributes.
     def resource_params
-      params.require(:vehicle).permit(:vehicle_brand, :vehicle_model, :fabrication_year, :numberplate)
+      params.require(:vehicle).permit(:vehicle_brand, :vehicle_model, :fabrication_year, :numberplate, :user_id)
     end
 end
