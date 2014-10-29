@@ -43,8 +43,11 @@
           <ul class="nav navbar-nav">
             
           <li class=""><a href="/"><i class="fa fa-home"></i></a></li>
-          <li class=""><a href="/">Sobre</a></li>
-          <li class=""><a href="/contato">Contato</a></li>
+          <% if user_signed_in? %>
+              <li class=""><a href="/vehicles">Meus Veículos</a></li>
+          <% end %>
+          <!-- <li class=""><a href="/">Sobre</a></li>
+          <li class=""><a href="/contato">Contato</a></li> -->
           </ul>
           <ul class="nav navbar-nav navbar-right">
             <% if user_signed_in? %>
