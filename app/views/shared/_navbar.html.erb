@@ -47,7 +47,16 @@
           <li class=""><a href="/contato">Contato</a></li>
           </ul>
           <ul class="nav navbar-nav navbar-right">
-            <li><button class="btn btn-success navbar-btn possante-login-btn">Login</button> </li>
+            <% if user_signed_in? %>
+              <li>  
+              <%= button_to "Logout", destroy_user_session_path, :class => "btn btn-warning navbar-btn possante-login-btn", :method => :delete %>    
+              </li>
+            <% else %>
+              <li>
+              <%= button_to "Login", new_user_session_path, :class => "btn btn-success navbar-btn possante-login-btn" %>
+              </li>
+            <% end %>
+            <!-- <li><button class="btn btn-success navbar-btn possante-login-btn">Login</button> </li> -->
           </ul>
         </div>
 
