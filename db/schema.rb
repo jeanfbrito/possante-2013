@@ -37,14 +37,16 @@ ActiveRecord::Schema.define(version: 20141014201911) do
   add_index "friendly_id_slugs", ["sluggable_type"], name: "index_friendly_id_slugs_on_sluggable_type"
 
   create_table "maintenances", force: true do |t|
-    t.date    "date"
-    t.float   "cost"
-    t.text    "description"
-    t.date    "warranty_time"
-    t.integer "mileage"
-    t.integer "vehicle_id"
-    t.integer "warranty_status"
-    t.integer "maintenance_type"
+    t.date     "date"
+    t.float    "cost"
+    t.text     "description"
+    t.date     "warranty_time"
+    t.integer  "mileage"
+    t.integer  "vehicle_id"
+    t.integer  "warranty_status"
+    t.integer  "maintenance_type"
+    t.datetime "created_at"
+    t.datetime "updated_at"
   end
 
   create_table "refuellings", force: true do |t|
