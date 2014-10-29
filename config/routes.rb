@@ -1,5 +1,7 @@
 Rails.application.routes.draw do
 
+  root 'pages#index'
+
   devise_for :users
   resources :vehicles do
     resources :refuellings
