@@ -20,6 +20,8 @@ module Possante
     # config.i18n.load_path += Dir[Rails.root.join('my', 'locales', '*.{rb,yml}').to_s]
     # config.i18n.default_locale = :de
 
+    config.serve_static_assets = true
+
     config.time_zone = 'Brasilia'
     config.i18n.available_locales = [:en, :"pt-BR"]
     config.i18n.default_locale = :"pt-BR"
