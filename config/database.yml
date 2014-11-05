@@ -19,10 +19,7 @@ test:
   timeout: 5000
 
 production:
-  adapter: postgresql
-  encoding: unicode
-  database: possante_production
+  adapter: sqlite3
+  database: db/test.sqlite3
   pool: 5
-  host: localhost
-  username: deployer
-  password: secret
+  timeout: 5000
