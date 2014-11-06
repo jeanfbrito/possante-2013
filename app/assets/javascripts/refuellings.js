@@ -1,12 +1,3 @@
-
-$(document).on("page:load ready", function(){
-    $("input.datepicker").datepicker();
-});
-
-$(document).ready(function() {
-  $('input.datepicker').datepicker();
-});
-
 $(document).ready(function() {
     lineChart();
 
